@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Ultra';
+    src: url('Ultra-Regular.woff2') format('woff2'),
+        url('Ultra-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
