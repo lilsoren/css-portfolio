@@ -1,0 +1,189 @@
+/**
+ * Product Showcase - Theming System
+ * 
+ * ARCHITECTURE CHOICE: CUBE
+ * 
+ * CUBE CSS approach:
+ * - Composition: Layout patterns (.flow, .grid, .cluster)
+ * - Utilities: Single-purpose classes (.text-center, .font-bold)
+ * - Blocks: Component styles (.card, .button)
+ * - Exceptions: State variations (add additional classes as needed)
+ * 
+ * 
+ * ORGANIZATION:
+ * You may create additional CSS files if you prefer to separate:
+ * - Base styles and custom properties
+ * - Layout patterns
+ * - Components
+ * - Utilities
+ * 
+ * MODERN CSS FEATURES TO USE:
+ * - CSS nesting throughout
+ * - Custom properties for theming
+ * - color-mix() for color variations
+ * - Modern selectors (:is, :where, :has, :not)
+ * - Logical properties (margin-inline, padding-block)
+ * 
+ * REQUIREMENTS:
+ * 1. Define theme system with custom properties
+ * 2. Implement light and dark themes
+ * 3. Support prefers-color-scheme
+ * 4. Use color-mix() for color variations
+ * 5. Create responsive layout
+ * 6. Ensure accessibility (contrast, focus indicators, reduced motion)
+ * 7. Style all components and states
+ */
+
+/* Your CSS implementation goes here */
+
+/* ITCSS: Inverted Triangle CSS */
+/* Settings layer */
+:root {
+  --color-primary: #006d77;
+
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 50%, black);
+  --color-primary-darker: color-mix(in srgb, var(--color-primary) 30%, black);
+
+  --color-primary-light: color-mix(in srgb, var(--color-primary) 50%, white);
+  --color-primary-lighter: color-mix(in srgb, var(--color-primary) 30%, white);
+
+  --color-secondary: #1b1b1b;
+  --color-secondary-light: color-mix(
+    in srgb,
+    var(--color-secondary) 40%,
+    white
+  );
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 40%, black);
+
+  --color-tertiary: #ffffff;
+
+  --color-accent: #ffa62b;
+  --color-accent-light: color-mix(in srgb, var(--color-accent) 50%, white);
+  --color-accent-dark: color-mix(in srgb, var(--color-accent) 50%, black);
+
+  /* Sematic variables */
+  --color-shell-bg: var(--color-primary-dark);
+  --color-shell-text: var(--color-tertiary);
+
+  --color-content-bg: var(--color-tertiary);
+  --color-content-text: var(--color-secondary);
+
+  --color-border: var(--color-primary-darker);
+
+  --color-attention: var(--color-accent);
+  --color-attention-hover: var(--color-accent-light);
+
+  --color-link-hover: var(--color-primary-light);
+
+  --padding-sm: clamp(0.5rem, 2vw, 1rem);
+  --padding-md: clamp(1rem, 4vw, 3rem);
+  --padding-lg: clamp(3rem, 5vw, 5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.dark-theme {
+    --color-content-bg: var(--color-secondary);
+    --color-content-text: var(--color-tertiary);
+
+    --color-border: var(--color-primary-light);
+  }
+}
+
+@font-face {
+  font-family: "font-heading";
+  src:
+    url("fonts/ZalandoSans.woff2") format("woff2"),
+    url("fonts/ZalandoSans.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Generic layer - reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+footer {
+  background-color: var(--color-shell-bg);
+  color: var(--color-shell-text);
+
+  a:hover {
+    color: var(--color-link-hover);
+  }
+}
+main {
+  background-color: var(--color-content-bg);
+  color: var(--color-content-text);
+}
+
+/* Composition */
+.cluster {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.card-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+@media (min-width: 924px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media (min-width: 1181px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Utility */
+.center {
+  justify-items: center;
+}
+.pad-sm {
+  padding: var(--padding-sm);
+}
+.pad-md {
+  padding: var(--padding-md);
+}
+.pad-lg {
+  padding: var(--padding-lg);
+}
+
+.pad-xs-vert {
+  padding: calc(var(--padding-sm) / 2) 0;
+}
+.pad-sm-vert {
+  padding: var(--padding-sm) 0;
+}
+.pad-md-vert {
+  padding: var(--padding-md) 0;
+}
+
+/* Block */
+.product-card {
+  /* border: 1px solid red; */
+
+  .product-content {
+    max-width: 50ch;
+    text-align: left;
+    margin: 0 auto;
+  }
+}
