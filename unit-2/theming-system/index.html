@@ -13,10 +13,10 @@
     <header class="site-header pad-md">
         <div class="header-content cluster">
             <h1 class="site-title">Product Showcase</h1>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle between light and dark theme">
+            <button id="theme-toggle" class="theme-toggle rounded" aria-label="Toggle between light and dark theme">
                 <span class="theme-icon-light">☀️</span>
                 <span class="theme-icon-dark">🌙</span>
-                <span class="theme-label">Theme</span>
+                <!-- <span class="theme-label">Theme</span> -->
             </button>
         </div>
     </header>
@@ -32,12 +32,12 @@
 
         <section class="filters cluster">
             <h2 class="visually-hidden">Filter Products</h2>
-            <div class="filter-buttons">
-                <button class="filter-button active" data-filter="all">All Products</button>
-                <button class="filter-button" data-filter="tech">Technology</button>
-                <button class="filter-button" data-filter="fashion">Fashion</button>
-                <button class="filter-button" data-filter="home">Home & Living</button>
-                <button class="filter-button" data-filter="sports">Sports</button>
+            <div class="filter-buttons cluster">
+                <button class="filter-button active rounded" data-filter="all">All Products</button>
+                <button class="filter-button rounded" data-filter="tech">Technology</button>
+                <button class="filter-button rounded" data-filter="fashion">Fashion</button>
+                <button class="filter-button rounded" data-filter="home">Home & Living</button>
+                <button class="filter-button rounded" data-filter="sports">Sports</button>
             </div>
         </section>
 
@@ -45,14 +45,14 @@
             <h2 class="visually-hidden">Product Grid</h2>
             <div class="product-grid grid ">
                 <article class="product-card pad-md-vert" data-category="tech">
-                    <img src="https://picsum.photos/seed/tech1/400/300" alt="Technology product" class="product-image">
+                    <img class="rounded" src="https://picsum.photos/seed/tech1/400/300" alt="Technology product" class="product-image">
                     <div class="product-content pad-sm-vert ">
                         <h3 class="product-title">Wireless Headphones</h3>
                         <p class="product-description pad-xs-vert">Premium sound quality with active noise
                             cancellation.</p>
                         <div class="product-footer">
                             <span class="product-price">$299.99</span>
-                            <button class="product-button">View Details</button>
+                            <button class="product-button ">View Details</button>
                         </div>
                     </div>
                 </article>
