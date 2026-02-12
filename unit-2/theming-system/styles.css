@@ -198,10 +198,16 @@ main {
 .rounded {
   border-radius: 20px;
 }
+.visually-hidden {
+  display: none;
+}
 
 /* Block */
 .product-card {
   /* border: 1px solid red; */
+  :is(img) {
+    border-radius: 20px;
+  }
 
   .product-content {
     max-width: 50ch;
@@ -213,10 +219,14 @@ main {
       background-color: var(--color-content-bg);
       border: none;
       padding-left: 10px;
+      transition-duration: 0.4s;
 
       &:hover {
         text-decoration: underline;
         cursor: pointer;
+      }
+      &:active {
+        transform: translateY(2px);
       }
     }
   }
@@ -230,7 +240,7 @@ main {
 
   &:hover {
     background-color: var(--color-content-bg);
-    transform: translateY(2px);
+    transform: translateY(6px);
     color: var(--color-btn-text);
     cursor: pointer;
   }
@@ -255,5 +265,11 @@ main {
     &:hover {
       background-color: var(--color-primary-light);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
   }
 }
