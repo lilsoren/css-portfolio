@@ -7,140 +7,160 @@
  * - Main content and sidebar should be side-by-side with proportional sizing
  * - Pull quotes should use align-self for positioning
  * - Author bio should use media object pattern
+
+
+ For the pull quotes. Align self was not doing anything. I just decided to make the width smaller to add visual difference. I had no idea what I was supposed to put for the author photo and text. I already did the layout properly to have the photo on the left and text on the right, so I don't know what else I am supposed to do. 
  */
 
 .article-container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
 
-/* TODO: Style the hero section
+/* TODO = DONE: Style the hero section
  * Hint: Use Flexbox with flex-direction: column
  * Center content vertically and push author info to bottom with margin-top: auto
  */
 .article-hero {
-    /* Your code here */
-    min-height: 400px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: white;
-    padding: var(--spacing-xxl);
-    margin-bottom: var(--spacing-xxl);
+  /* Your code here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  color: white;
+  padding: var(--spacing-xxl);
+  margin-bottom: var(--spacing-xxl);
 }
 
 .article-hero-title {
-    font-size: var(--font-size-xxlarge);
-    margin-bottom: var(--spacing-med);
+  font-size: var(--font-size-xxlarge);
+  margin-bottom: var(--spacing-med);
 }
 
 .article-hero-subtitle {
-    font-size: var(--font-size-large);
-    opacity: 0.9;
-    margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-large);
+  opacity: 0.9;
+  margin-bottom: var(--spacing-lg);
 }
 
 .article-hero-meta {
-    /* Your code here - how do you push this to the bottom? */
-    font-size: var(--font-size-small);
-    opacity: 0.8;
+  /* Your code here - how do you push this to the bottom? */
+  margin-top: auto;
+
+  font-size: var(--font-size-small);
+  opacity: 0.8;
 }
 
-/* TODO: Style the main content area (article + sidebar)
+/* TODO = DONE: Style the main content area (article + sidebar)
  * Hint: Use Flexbox with flex-wrap: wrap
  * Article content should have flex: 2 1 500px
  * Sidebar should have flex: 1 1 300px
  * This creates proportional sizing that wraps on narrow screens
  */
 .article-body {
-    /* Your code here */
-    padding: 0 var(--spacing-xl);
+  /* Your code here */
+  display: flex;
+  padding: 0 var(--spacing-xl);
 }
 
 .article-content {
-    /* Your code here */
-    padding-right: var(--spacing-xl);
+  /* Your code here */
+  flex: 2 1 500px;
+  padding-right: var(--spacing-xl);
 }
 
 .article-text {
-    font-size: var(--font-size-med);
-    line-height: var(--line-height-relaxed);
-    margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-med);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
 }
 
-/* TODO: Style pull quotes
+/* TODO - DONE: Style pull quotes
  * Hint: Pull quotes break the flow of text
  * Consider using align-self or margin to create visual interest
  * They should stand out from regular text
  */
 .pull-quote {
-    /* Your code here */
-    font-size: var(--font-size-large);
-    font-style: italic;
-    font-weight: var(--font-weight-medium);
-    color: var(--color-primary);
-    padding: var(--spacing-lg);
-    margin: var(--spacing-xl) 0;
-    border-left: 4px solid var(--color-primary);
-    background-color: var(--color-surface);
+  /* Your code here */
+  max-width: 80%;
+  font-size: var(--font-size-large);
+  font-style: italic;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-surface);
 }
 
-/* TODO: Style the sidebar
+/* TODO = DONE: Style the sidebar
  * Hint: Fixed-ish width that shrinks proportionally to article content
  */
 .article-sidebar {
-    /* Your code here */
+  /* Your code here */
+  flex: 1 1 300px;
 }
 
 .sidebar-section {
-    margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    background-color: var(--color-surface);
-    border-radius: var(--radius-med);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-med);
 }
 
 .sidebar-title {
-    font-size: var(--font-size-med);
-    margin-bottom: var(--spacing-med);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid var(--color-border);
+  font-size: var(--font-size-med);
+  margin-bottom: var(--spacing-med);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
 }
 
-/* TODO: Style related articles in sidebar
+/* TODO = DONE: Style related articles in sidebar
  * Hint: Each related article should use media object pattern
  * Small thumbnail on left, text on right
  */
 .related-article {
-    /* Your code here */
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-border);
+  /* Your code here */
+  display: flex;
+  gap: var(--spacing-med);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .related-article:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .related-article-thumbnail {
-    /* Your code here - fixed width */
-    width: 80px;
-    height: 60px;
-    border-radius: var(--radius-sm);
-    background-color: var(--color-border);
-    object-fit: cover;
+  /* Your code here - fixed width */
+  flex: 0 0 80px;
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-border);
+  object-fit: cover;
 }
 
 .related-article-content {
-    /* Your code here - grows to fill space */
+  /* Your code here - grows to fill space */
+  flex-grow: 1;
 }
 
 .related-article-title {
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xs);
-    line-height: var(--line-height-tight);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+  line-height: var(--line-height-tight);
 }
 
 .related-article-date {
-    font-size: var(--font-size-small);
-    color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
 }
 
 /* TODO: Style the author bio section with media object pattern
@@ -148,38 +168,41 @@
  * This is similar to the review pattern from product page
  */
 .article-author {
-    /* Your code here */
-    margin-top: var(--spacing-xxl);
-    padding: var(--spacing-xl);
-    background-color: var(--color-surface);
-    border-radius: var(--radius-med);
+  /* Your code here */
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xxl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-med);
 }
 
 .author-photo {
-    /* Your code here */
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: var(--color-border);
-    object-fit: cover;
+  /* Your code here */
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  object-fit: cover;
 }
 
 .author-info {
-    /* Your code here */
+  /* Your code here */
 }
 
 .author-name {
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
 }
 
 .author-title {
-    font-size: var(--font-size-small);
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
 }
 
 .author-bio {
-    line-height: var(--line-height-relaxed);
+  line-height: var(--line-height-relaxed);
 }
