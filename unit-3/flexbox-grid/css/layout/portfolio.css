@@ -1,7 +1,7 @@
 /**
  * Portfolio Layout
 
- Im going to be honest I was confused about the photo gallery because they looked the same whether I did auto-fit or auto-fill. Not sure if I was supposed to implement it differently, but it looked like the auto-fill was stretching even though the reading said that it wasn't going to stretch.
+
  * 
  * TODO: Implement the following layout requirements:
  * 
@@ -195,7 +195,7 @@
   /* Which one looks better for a photo gallery? */
   /* Consider: Do you want photos to expand or stay consistent width? */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(250px, 50%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 50%), 1fr));
   gap: var(--spacing-xxl);
 }
 
@@ -235,8 +235,6 @@
   /* TODO: Assign to grid area or position */
   /* Use flexbox internally for vertical spacing */
   grid-area: content;
- 
-  
 }
 
 /* ===========================================
@@ -286,3 +284,23 @@
    - Header layout (stack logo/nav on mobile)
    - About section (stack image/text on mobile)
 */
+@media (max-width: 900px) {
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    img {
+        max-width: 400px;
+    }
+
+    .about-content a, h2, img {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}
