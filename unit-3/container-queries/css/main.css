@@ -25,17 +25,17 @@
   }
 
   .stat-card-icon {
-    /* TODO: Use clamp() with cqi units for fluid sizing */
+    /* TODO = DONE: Use clamp() with cqi units for fluid sizing */
     /* Hint: clamp(36px, 8cqi, 48px) scales icon with container width */
-    width: 40px;
-    height: 40px;
+    width: clamp(36px, 8cqi, 48px);
+    height: clamp(36px, 8cqi, 48px);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* TODO: Use clamp() with cqi units for fluid font size */
+    /* TODO = DONE: Use clamp() with cqi units for fluid font size */
     /* Hint: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem) */
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem);
     flex-shrink: 0;
 
     &.blue {
@@ -72,17 +72,17 @@
   }
 
   .stat-card-value {
-    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
     /* Hint: clamp(1.5rem, 4cqi + 1rem, 2.5rem) scales value with container */
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 4cqi + 1rem, 2.5rem);
     font-weight: 700;
     color: #f1f5f9;
   }
 
   .stat-card-change {
-    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
     /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -206,9 +206,9 @@
     display: flex;
     align-items: flex-end;
     padding: 1rem;
-    /* TODO: Use clamp() with cqi units for fluid gap between bars */
+    /* TODO = DONE: Use clamp() with cqi units for fluid gap between bars */
     /* Hint: clamp(0.25rem, 1cqi, 0.75rem) */
-    gap: 0.5rem;
+    gap: clamp(0.25rem, 1cqi, 0.75rem);
   }
 
   .revenue-bar {
@@ -540,14 +540,14 @@
   }
 
   .metric-label {
-    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
     /* Hint: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem) */
     font-size: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem);
     color: #94a3b8;
   }
 
   .metric-value {
-    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
     /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
     font-size: clamp(1.25rem, 3cqi + 0.75rem, 2rem);
     font-weight: 700;
@@ -569,7 +569,7 @@
   }
 }
 
-/* TODO: Add @container query for metrics-grid at 350px+
+/* TODO = DONE: Add @container query for metrics-grid at 350px+
    Hint: Change to 2 columns
    Hint: grid-template-columns: repeat(2, 1fr)
 */
@@ -581,7 +581,7 @@
   }
 }
 
-/* TODO: Add @container query for metrics-grid at 550px+
+/* TODO = DONE: Add @container query for metrics-grid at 550px+
    Hint: Change to 3 columns
    Hint: grid-template-columns: repeat(3, 1fr)
 */
@@ -593,7 +593,7 @@
   }
 }
 
-/* TODO: Add @container query for metrics-grid at 750px+
+/* TODO = DONE: Add @container query for metrics-grid at 750px+
    Hint: Change to 4 columns
    Hint: grid-template-columns: repeat(4, 1fr)
 */
@@ -605,7 +605,7 @@
   }
 }
 
-/* TODO: Add @container query for metrics-grid at 950px+
+/* TODO = DONE: Add @container query for metrics-grid at 950px+
    Hint: Change to 5 columns
    Hint: grid-template-columns: repeat(5, 1fr)
 */

@@ -107,7 +107,7 @@ body {
   }
 }
 
-/* TODO: Add @media query for mobile (max-width: 768px)
+/* TODO = DONE: Add @media query for mobile (max-width: 768px)
    Hint = done: Reduce body padding to 0.75rem
    Hint = done: Reduce dashboard-grid gap to 0.75rem
    Hint = done: Reduce widget-container padding to 0.75rem
