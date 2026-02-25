@@ -3,7 +3,7 @@
    Imports base styles and defines widget components
    ============================================ */
 
-@import 'base.css';
+@import "base.css";
 
 /* ============================================
    STAT CARD WIDGET
@@ -12,113 +12,136 @@
    ============================================ */
 
 .stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .stat-card-header {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
 
-    .stat-card-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        text-align: center;
+  .stat-card-icon {
+    /* TODO: Use clamp() with cqi units for fluid sizing */
+    /* Hint: clamp(36px, 8cqi, 48px) scales icon with container width */
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* TODO: Use clamp() with cqi units for fluid font size */
+    /* Hint: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem) */
+    font-size: 1.5rem;
+    flex-shrink: 0;
+
+    &.blue {
+      background: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
     }
 
-    .stat-card-icon {
-        /* TODO: Use clamp() with cqi units for fluid sizing */
-        /* Hint: clamp(36px, 8cqi, 48px) scales icon with container width */
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* TODO: Use clamp() with cqi units for fluid font size */
-        /* Hint: clamp(1.25rem, 3cqi + 0.5rem, 1.75rem) */
-        font-size: 1.5rem;
-        flex-shrink: 0;
-
-        &.blue {
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-        }
-
-        &.green {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-        }
-
-        &.purple {
-            background: rgba(168, 85, 247, 0.1);
-            color: #a855f7;
-        }
-
-        &.orange {
-            background: rgba(249, 115, 22, 0.1);
-            color: #f97316;
-        }
+    &.green {
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
     }
 
-    .stat-card-title {
-        font-size: 0.875rem;
-        color: #94a3b8;
-        font-weight: 500;
+    &.purple {
+      background: rgba(168, 85, 247, 0.1);
+      color: #a855f7;
     }
 
-    .stat-card-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+    &.orange {
+      background: rgba(249, 115, 22, 0.1);
+      color: #f97316;
+    }
+  }
+
+  .stat-card-title {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .stat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-card-value {
+    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(1.5rem, 4cqi + 1rem, 2.5rem) scales value with container */
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f1f5f9;
+  }
+
+  .stat-card-change {
+    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    &.positive {
+      color: #22c55e;
     }
 
-    .stat-card-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.5rem, 4cqi + 1rem, 2.5rem) scales value with container */
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: #f1f5f9;
+    &.negative {
+      color: #ef4444;
     }
+  }
 
-    .stat-card-change {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
-        font-size: 0.875rem;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-
-        &.positive {
-            color: #22c55e;
-        }
-
-        &.negative {
-            color: #ef4444;
-        }
-    }
-
-    .stat-card-chart {
-        display: none;
-        width: 100%;
-        height: 60px;
-        margin-top: 0.5rem;
-    }
+  .stat-card-chart {
+    display: none;
+    width: 100%;
+    height: 60px;
+    margin-top: 0.5rem;
+  }
 }
 
-/* TODO: Add @container query for stat card at 200px+
+/* TODO = DONE: Add @container query for stat card at 200px+
    Hint: Make icon and title display side by side (flex-direction: row)
    Hint: Reset text-align to left
 */
+@container (min-width: 200px) {
+  .stat-card .stat-card-header {
+    flex-direction: row;
+    text-align: left;
+  }
+}
 
-/* TODO: Add @container query for stat card at 250px+
+/* TODO = DONE: Add @container query for stat card at 250px+
    Hint: Make entire card horizontal (flex-direction: row)
    Hint: Use justify-content: space-between to space elements
    Hint: Make stat-card-content flex: 1
 */
+@container (min-width: 250px) {
+  .stat-card {
+    flex-direction: row;
+    justify-content: space-between;
 
-/* TODO: Add @container query for stat card at 350px+
+    .stat-card-content {
+      flex: 1;
+    }
+  }
+}
+
+/* TODO = DONE: Add @container query for stat card at 350px+
    Hint: Display the mini chart (display: block)
    Hint: Set width to 80px and flex-shrink: 0
 */
+
+@container (min-width: 350px) {
+  .stat-card .stat-card-chart {
+    display: block;
+    flex-shrink: 0;
+  }
+}
 
 /* ============================================
    REVENUE CHART WIDGET
@@ -126,78 +149,94 @@
    ============================================ */
 
 .revenue-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .revenue-chart-header {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
+  }
 
-    .revenue-chart-header {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .revenue-chart-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
 
-    .revenue-chart-title {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #f1f5f9;
-    }
+  .revenue-chart-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .revenue-chart-stats {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+  .revenue-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
 
-    .revenue-stat {
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-    }
+  .revenue-stat-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
 
-    .revenue-stat-label {
-        font-size: 0.75rem;
-        color: #94a3b8;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
+  .revenue-stat-value {
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
+    font-size: clamp(1.5rem, 3cqi + 0.75rem, 2rem);
+    font-weight: 700;
+    color: #f1f5f9;
+  }
 
-    .revenue-stat-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #f1f5f9;
-    }
+  .revenue-chart-visual {
+    width: 100%;
+    /* TODO = DONE: Use clamp() with cqi units for fluid height */
+    /* Hint: clamp(180px, 30cqi, 300px) scales chart height with container */
+    height: clamp(180px, 30cqi, 300px);
+    background: linear-gradient(
+      180deg,
+      rgba(59, 130, 246, 0.1) 0%,
+      transparent 100%
+    );
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    /* TODO: Use clamp() with cqi units for fluid gap between bars */
+    /* Hint: clamp(0.25rem, 1cqi, 0.75rem) */
+    gap: 0.5rem;
+  }
 
-    .revenue-chart-visual {
-        width: 100%;
-        /* TODO: Use clamp() with cqi units for fluid height */
-        /* Hint: clamp(180px, 30cqi, 300px) scales chart height with container */
-        height: 200px;
-        background: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
-        border-radius: 8px;
-        display: flex;
-        align-items: flex-end;
-        padding: 1rem;
-        /* TODO: Use clamp() with cqi units for fluid gap between bars */
-        /* Hint: clamp(0.25rem, 1cqi, 0.75rem) */
-        gap: 0.5rem;
-    }
-
-    .revenue-bar {
-        flex: 1;
-        background: linear-gradient(180deg, #3b82f6 0%, #1e40af 100%);
-        border-radius: 4px;
-        min-height: 40px;
-    }
+  .revenue-bar {
+    flex: 1;
+    background: linear-gradient(180deg, #3b82f6 0%, #1e40af 100%);
+    border-radius: 4px;
+    min-height: 40px;
+  }
 }
 
-/* TODO: Add @container query for revenue chart at 450px+
+/* TODO = DONE: Add @container query for revenue chart at 450px+
    Hint: Make header horizontal (flex-direction: row)
    Hint: Use justify-content: space-between
    Hint: Make stats horizontal (flex-direction: row)
    Hint: Add gap: 2rem between stats
 */
+@container (min-width: 450px) {
+  .revenue-chart {
+    .revenue-chart-header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .revenue-chart-stats {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
 
 /* ============================================
    TOP PRODUCTS WIDGET
@@ -205,218 +244,268 @@
    ============================================ */
 
 .top-products {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .top-products-header {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  .product-list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
 
-    .top-products-header {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #f1f5f9;
-    }
+  .product-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 1rem;
+    background: #0f172a;
+    border-radius: 8px;
+    border: 1px solid #334155;
+  }
 
-    .product-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
+  .product-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
 
-    .product-item {
-        display: grid;
-        grid-template-columns: 60px 1fr auto auto;
-        gap: 0.75rem;
-        align-items: center;
-        padding: 1rem;
-        background: #0f172a;
-        border-radius: 8px;
-        border: 1px solid #334155;
-    }
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
 
-    .product-image {
-        width: 60px;
-        height: 60px;
-        border-radius: 8px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-    }
+  .product-name {
+    font-weight: 600;
+    color: #f1f5f9;
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
+    font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
+  }
 
-    .product-info {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        min-width: 0;
-    }
+  .product-category {
+    color: #64748b;
+    /* TODO = DONE: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem) */
+    font-size: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem);
+  }
 
-    .product-name {
-        font-weight: 600;
-        color: #f1f5f9;
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 2cqi + 0.5rem, 1rem) */
-        font-size: 0.875rem;
-    }
+  .product-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
 
-    .product-category {
-        color: #64748b;
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem) */
-        font-size: 0.75rem;
-    }
+  .product-stat-label {
+    /* TODO = DONE: Use clamp() with cqi units - should match product-name */
+    font-size: clamp(0.75rem, 2cqi + 0.5rem, 1rem);
+    font-weight: 600;
+    color: #f1f5f9;
+  }
 
-    .product-stat {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.25rem;
-    }
-
-    .product-stat-label {
-        /* TODO: Use clamp() with cqi units - should match product-name */
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #f1f5f9;
-    }
-
-    .product-stat-value {
-        /* TODO: Use clamp() with cqi units - should match product-category */
-        font-size: 0.7rem;
-        color: #64748b;
-    }
+  .product-stat-value {
+    /* TODO = DONE: Use clamp() with cqi units - should match product-category */
+    font-size: clamp(0.7rem, 1.5cqi + 0.4rem, 0.875rem);
+    color: #64748b;
+  }
 }
 
-/* TODO: Add @container query for product-item at 400px or less
+/* TODO = DONE: Add @container query for product-item at 400px or less
    Hint: Change grid to 2 columns: 60px 1fr
    Hint: Use grid-template-rows: auto auto
    Hint: Position product-info in column 2, row 1
    Hint: Position first product-stat in column 1, row 2
    Hint: Position second product-stat in column 2, row 2
 */
+@container (max-width: 400px) {
+  .top-products {
+    .product-item {
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: auto auto;
+    }
+    .product-info {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .product-stat:nth-of-type(3) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .product-stat:nth-of-type(4) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
 
-/* TODO: Add @container query for product-list at 500px+
+/* TODO = DONE: Add @container query for product-list at 500px+
    Hint: Change to grid layout with 2 columns
    Hint: grid-template-columns: repeat(2, 1fr)
 */
+@container (min-width: 500px) {
+  .top-products {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
 
-/* TODO: Add @container query for product-list at 800px+
+/* TODO = DONE: Add @container query for product-list at 800px+
    Hint: Change to 3 columns
    Hint: grid-template-columns: repeat(3, 1fr)
 */
-
+@container (min-width: 800px) {
+  .top-products {
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
 /* ============================================
    USER ACTIVITY WIDGET
    Recent user actions with avatars
    ============================================ */
 
 .user-activity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .user-activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user-activity-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  .user-activity-filter {
+    padding: 0.5rem 1rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .user-activity-list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
 
-    .user-activity-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .activity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #0f172a;
+    border-radius: 8px;
+    border: 1px solid #334155;
+  }
 
-    .user-activity-title {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #f1f5f9;
-    }
+  .activity-item-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
 
-    .user-activity-filter {
-        padding: 0.5rem 1rem;
-        background: #0f172a;
-        border: 1px solid #334155;
-        border-radius: 6px;
-        color: #94a3b8;
-        font-size: 0.875rem;
-        cursor: pointer;
-    }
+  .activity-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+  }
 
-    .user-activity-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
+  .activity-content {
+    flex: 1;
+    min-width: 0;
+  }
 
-    .activity-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        padding: 1rem;
-        background: #0f172a;
-        border-radius: 8px;
-        border: 1px solid #334155;
-    }
+  .activity-name {
+    font-weight: 600;
+    color: #f1f5f9;
+    font-size: 0.875rem;
+  }
 
-    .activity-item-row {
-        display: flex;
-        gap: 0.75rem;
-        align-items: flex-start;
-    }
+  .activity-action {
+    color: #94a3b8;
+    font-size: 0.875rem;
+  }
 
-    .activity-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 600;
-    }
+  .activity-time {
+    color: #64748b;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
 
-    .activity-content {
-        flex: 1;
-        min-width: 0;
-    }
+  .activity-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .activity-name {
-        font-weight: 600;
-        color: #f1f5f9;
-        font-size: 0.875rem;
-    }
-
-    .activity-action {
-        color: #94a3b8;
-        font-size: 0.875rem;
-    }
-
-    .activity-time {
-        color: #64748b;
-        font-size: 0.75rem;
-        margin-top: 0.25rem;
-        display: block;
-    }
-
-    .activity-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .activity-badge {
-        padding: 0.25rem 0.75rem;
-        background: rgba(59, 130, 246, 0.1);
-        color: #3b82f6;
-        border-radius: 12px;
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
+  .activity-badge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
 }
 
-/* TODO: Add @container query for activity-item at 400px+
+/* TODO = DONE: Add @container query for activity-item at 400px+
    Hint: Make activity-item horizontal (flex-direction: row)
    Hint: Use align-items: center
    Hint: Use justify-content: space-between
    Hint: Make activity-item-row flex: 1
    Hint: Make activity-meta flex-shrink: 0
 */
+@container (min-width: 400px) {
+  .user-activity {
+    .activity-item {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .activity-item-row {
+      flex: 1;
+    }
+    .activity-meta {
+      flex-shrink: 0;
+    }
+  }
+}
 
 /* ============================================
    PERFORMANCE METRICS WIDGET
@@ -424,78 +513,106 @@
    ============================================ */
 
 .performance-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  .performance-header {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .metric-card {
+    padding: 1rem;
+    background: #0f172a;
+    border-radius: 8px;
+    border: 1px solid #334155;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
+  }
 
-    .performance-header {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #f1f5f9;
-    }
+  .metric-label {
+    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem) */
+    font-size: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem);
+    color: #94a3b8;
+  }
 
-    .metrics-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
+  .metric-value {
+    /* TODO: Use clamp() with cqi units for fluid typography */
+    /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
+    font-size: clamp(1.25rem, 3cqi + 0.75rem, 2rem);
+    font-weight: 700;
+    color: #f1f5f9;
+  }
 
-    .metric-card {
-        padding: 1rem;
-        background: #0f172a;
-        border-radius: 8px;
-        border: 1px solid #334155;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .metric-progress {
+    width: 100%;
+    height: 8px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
 
-    .metric-label {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(0.75rem, 1.5cqi + 0.5rem, 0.95rem) */
-        font-size: 0.875rem;
-        color: #94a3b8;
-    }
-
-    .metric-value {
-        /* TODO: Use clamp() with cqi units for fluid typography */
-        /* Hint: clamp(1.25rem, 3cqi + 0.75rem, 2rem) */
-        font-size: 1.75rem;
-        font-weight: 700;
-        color: #f1f5f9;
-    }
-
-    .metric-progress {
-        width: 100%;
-        height: 8px;
-        background: rgba(59, 130, 246, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-    }
-
-    .metric-progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
-        border-radius: 4px;
-    }
+  .metric-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
+    border-radius: 4px;
+  }
 }
 
 /* TODO: Add @container query for metrics-grid at 350px+
    Hint: Change to 2 columns
    Hint: grid-template-columns: repeat(2, 1fr)
 */
+@container (min-width: 350px) {
+  .performance-metrics {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
 
 /* TODO: Add @container query for metrics-grid at 550px+
    Hint: Change to 3 columns
    Hint: grid-template-columns: repeat(3, 1fr)
 */
+@container (min-width: 550px) {
+  .performance-metrics {
+    .metrics-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
 
 /* TODO: Add @container query for metrics-grid at 750px+
    Hint: Change to 4 columns
    Hint: grid-template-columns: repeat(4, 1fr)
 */
+@container (min-width: 750px) {
+  .performance-metrics {
+    .metrics-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
 
 /* TODO: Add @container query for metrics-grid at 950px+
    Hint: Change to 5 columns
    Hint: grid-template-columns: repeat(5, 1fr)
 */
+@container (min-width: 950px) {
+  .performance-metrics {
+    .metrics-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
