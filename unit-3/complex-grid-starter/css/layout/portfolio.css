@@ -218,7 +218,7 @@ body {
    3. When should you NOT use subgrid?
       - If each card had completely different content structure?
       - If cards were independent modules with no alignment needs?
-      If each card has totally different content structure, I think you could still use subgrid, as in the rows would still be uniform, but I think it would look weird if a title and an image are on the same row in different cards. It would look odd proportionally. 
+      If each card has totally different content structure, I think you could still use subgrid technically, as in the rows would still be uniform, but I think it would look weird if a title and an image are on the same row in different cards. It would look odd proportionally. 
       If cards were independent, then subgrid would not work. If this question is asking what I think it is, this is the reason I chose not to use subgrid in the dashboard page. 
 
 
