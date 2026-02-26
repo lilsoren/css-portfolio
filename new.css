@@ -1,0 +1,180 @@
+/* ================================
+   Global Reset / Normalization
+   ================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--dark-purple);
+  color: white;
+}
+
+/* ================================
+   Theme Variables
+   ================================ */
+:root {
+  --light-mauve: #cd9ea5;
+  --mauve: #9a5765;
+  --plumb: #67264f;
+  --purple: #36356e;
+  --dark-purple: #110b3c;
+
+  --max-width: 1100px;
+}
+
+/* ================================
+   Layout
+   ================================ */
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ================================
+   Header
+   ================================ */
+.site-header {
+  background: var(--purple);
+  border-bottom: 2px solid var(--light-mauve);
+}
+
+.header-top {
+  text-align: center;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  padding: 0.75rem;
+  background: var(--dark-purple);
+}
+
+.nav a {
+  position: relative;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.nav a:hover {
+  color: var(--light-mauve);
+  opacity: 1;
+}
+
+/* ================================
+   Main Content
+   ================================ */
+main {
+  width: min(100%, var(--max-width));
+  margin-inline: auto;
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* ================================
+   Hero Section
+   ================================ */
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.hero img {
+  width: clamp(180px, 30vw, 280px);
+  border-radius: 1rem;
+  border: 3px solid var(--light-mauve);
+}
+
+.hero-text h2 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.hero-text p {
+  opacity: 0.85;
+}
+
+/* Responsive hero */
+@media (min-width: 700px) {
+  .hero {
+    grid-template-columns: auto 1fr;
+    text-align: left;
+  }
+}
+
+/* ================================
+   Projects Section
+   ================================ */
+.projects h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* ================================
+   Project Card
+   ================================ */
+.project-card {
+  background: linear-gradient(
+    145deg,
+    var(--purple),
+    var(--plumb)
+  );
+  padding: 1.25rem;
+  border-radius: 1rem;
+  transition: 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--light-mauve);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   Footer
+   ================================ */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--purple);
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}

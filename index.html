@@ -5,33 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="unit-1/refactoring/index.html">Refactoring Old to New CSS</a>
-            <a href="unit-1/typography-implementation/index.html">Typography Activity</a>
-            <a href="unit-2/theming-system/index.html">Theming Styles</a>
-            <a href="unit-2/postcss-practice/index.html">PostCSS and Modern CSS</a>
-            <a href="unit-2/flexbox-starter/article.html">Article</a>
-            <a href="unit-2/flexbox-starter/product.html">Product</a>
-            <a href="unit-2/flexbox-starter/dashboard.html">Dashboard</a>
 
+    <header class="site-header">
+        <div class="header-top">
+            <h1>Lily's CSS Portfolio</h1>
+        </div>
+
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
     <main>
-        <img src="images/lily.jpg" alt="image of Lily" style="width: 300px;">
-        <p>Welcome to Lily's CSS Portfolio</p>
-        <p>Here I will demonstrate my abilities of styling webpages using modern CSS. </p>
+
+        <section class="hero">
+            <img src="images/lily.jpg" alt="Image of Lily">
+            <div class="hero-text">
+                <h2>Welcome 👋</h2>
+                <p>
+                    Welcome to my CSS portfolio. Here I showcase projects demonstrating
+                    modern layout techniques, theming systems, and responsive design.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+
+            <div class="project-grid">
+
+                <a class="project-card" href="unit-1/refactoring/index.html">
+                    <h3>Refactoring CSS</h3>
+                    <p>Transforming legacy styles into modern, maintainable CSS.</p>
+                </a>
+
+                <a class="project-card" href="unit-1/typography-implementation/index.html">
+                    <h3>Typography Activity</h3>
+                    <p>Exploring font hierarchy, spacing, and readability.</p>
+                </a>
+
+                <a class="project-card" href="unit-2/theming-system/index.html">
+                    <h3>Theming System</h3>
+                    <p>Reusable color tokens and design variables.</p>
+                </a>
+
+                <a class="project-card" href="unit-2/postcss-practice/index.html">
+                    <h3>PostCSS Practice</h3>
+                    <p>Using modern CSS features with tooling enhancements.</p>
+                </a>
+
+                <a class="project-card" href="unit-2/flexbox-starter/article.html">
+                    <h3>Flexbox Article</h3>
+                    <p>Responsive layout using flexbox fundamentals.</p>
+                </a>
+
+                <a class="project-card" href="unit-2/flexbox-starter/product.html">
+                    <h3>Product Layout</h3>
+                    <p>Product card layout with flexible alignment.</p>
+                </a>
+
+                <a class="project-card" href="unit-2/flexbox-starter/dashboard.html">
+                    <h3>Dashboard UI</h3>
+                    <p>Multi-panel interface using flexbox/grid.</p>
+                </a>
+                <a class="project-card" href="unit-3/flexbox-grid/index.html">
+                    <h3>Flexbox and Grid</h3>
+                    <p> description</p>
+                </a>
+                <a class="project-card" href="unit-3/complex-grid-starter/dashboard.html">
+                    <h3>Dashboard Grid</h3>
+                    <p> description</p>
+                </a>
+                <a class="project-card" href="unit-3/complex-grid-starter/magazine.html">
+                    <h3>Magazine Grid</h3>
+                    <p> description</p>
+                </a>
+                <a class="project-card" href="unit-3/complex-grid-starter/portfolio.html">
+                    <h3>Portfolio Grid</h3>
+                    <p> description</p>
+                </a>
+                <a class="project-card" href="unit-3/container-queries/index.html">
+                    <h3>Container Queries</h3>
+                    <p> description</p>
+                </a>
+
+            </div>
+        </section>
+
     </main>
 
     <footer>
         &copy; 2026 Lily's Portal Page
     </footer>
-
 
 </body>
 
