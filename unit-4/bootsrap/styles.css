@@ -1,0 +1,18 @@
+.card {
+  border: 1px solid black;
+  margin: 25px;
+  width: 29%;
+}
+img.card-img-top {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+.list-group-item {
+  border: none;
+  padding-top: 0px;
+}
+.btn {
+  background-color: rgb(255, 145, 28);
+  width: 50%;
+}
