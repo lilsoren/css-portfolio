@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .section-title {
+    @apply text-3xl font-semibold mb-6 text-center text-blue-800;
+  }
+
+  .card-border {
+    @apply bg-gradient-to-r from-blue-700 to-blue-300 p-[4px] rounded-lg h-full transition-transform duration-300 hover:scale-105;
+  }
+
+  .card {
+    @apply bg-white rounded-lg h-full flex flex-col;
+  }
+
+  .card-img {
+    @apply w-full aspect-square object-cover rounded-lg p-5;
+  }
+
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Practice</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/output.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <!-- hero section -->
             <div
                 class="text-center mt-20 mx-auto p-10 flex flex-col gap-6 border-2 border-blue-300 w-full max-w-3xl rounded-lg">
-                <h2 class="text-3xl font-semibold mb-6 text-center text-blue-800">Alma 37:6</h2>
+                <h2 class="section-title">Alma 37:6</h2>
                 <h4>By small and simple things are great things brought to pass</h4>
                 <p>Throughout the scriptures, God shows that small actions done consistently can lead to great blessings
                     and
@@ -54,13 +54,11 @@
                 <h2 class="text-3xl font-semibold mb-6 text-center text-blue-800">Applying the Principle</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 md:mx-20 gap-12 pb-20">
 
-                    <div
-                        class="bg-gradient-to-r from-blue-700 to-blue-300 p-[4px] rounded-lg h-full transition-transform duration-300 hover:scale-105">
+                    <div class="card-border">
                         <!-- Card content -->
 
-                        <div class="bg-white rounded-lg h-full flex flex-col">
-                            <img src="images/scriptures.jpeg" class="w-full aspect-square object-cover rounded-lg p-5"
-                                alt="Scriptures">
+                        <div class="card">
+                            <img src="images/scriptures.jpeg" class="card-img" alt="Scriptures">
                             <div class="p-6 flex-grow">
                                 <h3 class="font-bold text-center text-lg text-blue-800 pb-4">Scripture Study</h3>
                                 <p>Simple habits like scripture study may seem insignificant, but over time they
@@ -69,13 +67,11 @@
                         </div>
                     </div>
 
-                    <div
-                        class=" bg-gradient-to-r from-blue-700 to-blue-300 p-[4px] rounded-lg h-full transition-transform duration-300 hover:scale-105">
+                    <div class="card-border">
                         <!-- Card content -->
-                        <div class="bg-white rounded-lg h-full flex flex-col">
+                        <div class="card">
 
-                            <img src="images/prayer.jpeg" class="w-full aspect-square object-cover rounded-lg p-5"
-                                alt="Prayer">
+                            <img src="images/prayer.jpeg" class="card-img" alt="Prayer">
                             <div class="p-6">
                                 <h3 class="font-bold text-center text-lg text-blue-800 pb-4">Pray Often</h3>
                                 <p>Praying often strengthens your faith and relationship with Heavenly Father.</p>
@@ -83,13 +79,11 @@
                         </div>
                     </div>
 
-                    <div
-                        class=" bg-gradient-to-r from-blue-700 to-blue-300 p-[4px] rounded-lg h-full transition-transform duration-300 hover:scale-105">
+                    <div class="card-border">
                         <!-- Card content -->
-                        <div class="bg-white rounded-lg h-full flex flex-col">
+                        <div class="card">
 
-                            <img src="images/serve.jpeg" class="w-full aspect-square object-cover rounded-lg p-5"
-                                alt="Scriptures">
+                            <img src="images/serve.jpeg" class="card-img" alt="Scriptures">
                             <div class="p-6">
                                 <h3 class="font-bold text-center text-lg text-blue-800 pb-4">Serving Others</h3>
                                 <p>Small acts of kindness can have a powerful impact on the life of the receiver and the
