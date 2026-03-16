@@ -194,7 +194,7 @@ p {
 
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.1), rgba(242, 193, 78, 0.2)),
-    url("../images/clouds-bg.jpg");
+    url("./../images/clouds-bg.jpg");
 
   background-size: cover;
   background-position: top;
