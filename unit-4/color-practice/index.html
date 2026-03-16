@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Gradients</title>
+    <style>
+        body {}
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            padding: 20px;
+        }
+
+        div {
+            border: 1px solid purple;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .item-1 {
+            background-image: linear-gradient(#3b82f6, #8b5cf6);
+        }
+
+        .item-2 {
+            background-image: linear-gradient(to right, #3b82f6, #8b5cf6);
+        }
+
+        .item-3 {
+            background-image: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        }
+
+        .item-4 {
+            background-image: linear-gradient(#5f0f40, #9a031e, #fb8b24, #e36414, #0f4c5c);
+        }
+
+        .item-5 {
+            background-image: linear-gradient(#3b82f6 0%,
+                    #3b82f6 40%,
+                    #8b5cf6 60%,
+                    #8b5cf6 100%);
+        }
+
+        .item-6 {
+            background-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    transparent 30%,
+                    transparent 70%,
+                    rgba(0, 0, 0, 0.3) 100%);
+            color: black;
+        }
+
+        .item-7 {
+            background-image: radial-gradient(#3b82f6, #1e1b4b);
+        }
+
+        .item-8 {
+            background-image: radial-gradient(circle at top left, #3b82f6, #1e1b4b);
+
+        }
+
+        .item-9 {
+            background-image: conic-gradient(#3b82f6, #8b5cf6, #ec4899, #3b82f6);
+        }
+
+        .item-10 {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background-image: conic-gradient(#3b82f6 0deg 120deg,
+                    /* 33% blue */
+                    #8b5cf6 120deg 240deg,
+                    /* 33% purple */
+                    #ec4899 240deg 360deg
+                    /* 33% pink */
+                );
+        }
+
+        .item-11 {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background-image: conic-gradient(hsl(0, 100%, 50%),
+                    hsl(60, 100%, 50%),
+                    hsl(120, 100%, 50%),
+                    hsl(180, 100%, 50%),
+                    hsl(240, 100%, 50%),
+                    hsl(300, 100%, 50%),
+                    hsl(360, 100%, 50%));
+        }
+
+        .stripes {
+            background-image: repeating-linear-gradient(45deg,
+                    #3b82f6 0px,
+                    #3b82f6 10px,
+                    #7cadfc 10px,
+                    #7cadfc 20px);
+        }
+
+        /* Concentric rings */
+        .rings {
+            background-image: repeating-radial-gradient(circle at center,
+                    #3b82f6 0px,
+                    #3b82f6 5px,
+                    #7cadfc 5px,
+                    #7cadfc 15px);
+        }
+
+        .checkerboard {
+            background-color: #3b82f6;
+            background-image:
+                linear-gradient(45deg, #8b5cf6 25%, transparent 25%),
+                linear-gradient(-45deg, #8b5cf6 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #8b5cf6 75%),
+                linear-gradient(-45deg, transparent 75%, #8b5cf6 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        }
+
+        .dot-grid {
+            background-color: #1e1b4b;
+            background-image: radial-gradient(circle,
+                    white 1px,
+                    transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .line-grid {
+            background-color: #0f172a;
+            background-image:
+                linear-gradient(white 1px, transparent 1px),
+                linear-gradient(90deg, white 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Repeating conic pie slices */
+        .pinwheel {
+            background-image: repeating-conic-gradient(#3b82f6 0deg 30deg,
+                    #8b5cf6 30deg 60deg);
+        }
+
+        .overlay-text {
+            mix-blend-mode: multiply;
+        }
+
+        .color-overlay {
+            mix-blend-mode: screen;
+        }
+
+        .blend-mode {
+            width: 500px;
+            height: 300px;
+
+            background-image:
+                linear-gradient(rgba(255, 157, 10, 0.6),
+                    rgba(255, 100, 198, 0.6)),
+                url("images/grey.jpg");
+            background-blend-mode: overlay, normal;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Color Gradients</h1>
+    <main>
+        <div class="item-1">Normal</div>
+        <div class="item-2">to right</div>
+        <div class="item-3">45deg</div>
+        <div class="item-4">More than 2 colors</div>
+        <div class="item-5">0%, 40%, 60%, 100%</div>
+        <div class="item-6">vignette</div>
+        <div class="item-7">Radial</div>
+        <div class="item-8">Circle at top left</div>
+        <div class="item-9">Cone</div>
+        <div class="item-10">Pie Chart</div>
+        <div class="item-11">Color Wheel</div>
+        <div class="stripes">Stripes</div>
+        <div class="rings">Rings</div>
+        <div class="pinwheel">Pinwheel</div>
+        <div class="checkerboard">Checkerboard</div>
+        <div class="dot-grid">Dots</div>
+        <div class="line-grid">Lines</div>
+    </main>
+    <h1>Blend Modes</h1>
+    <main>
+        <div class="blend-mode"></div>
+
+    </main>
+</body>
+
+</html>
