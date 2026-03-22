@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: test 5s infinite;
+        }
+
+        @keyframes test {
+            0% {
+                transform: translateX(0);
+                animation-timing-function: ease-in;
+            }
+
+            50% {
+                transform: translateX(200px);
+                animation-timing-function: ease-out;
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The @keyframes Rule</h1>
+
+    <div></div>
+
+</body>
+
+</html>
