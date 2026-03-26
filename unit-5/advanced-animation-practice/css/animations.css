@@ -22,7 +22,19 @@
    Note: transform-origin: left is already set in base.css so the
    bar grows from the left edge rather than the center.
 */
-
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.progress-bar {
+  animation: progress;
+  animation-timeline: scroll(root block);
+  animation-fill-mode: both;
+}
 
 /* TODO 2: Card Entrance
    ---------------------------------------------------------------
@@ -41,7 +53,23 @@
    4. Add animation-fill-mode: both so cards below the fold stay
       invisible until they begin entering the viewport.
 */
+@keyframes card {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.card {
+  animation: card 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+  animation-fill-mode: both;
+}
 
 /* TODO 3: Feature Section — Left Slide In
    ---------------------------------------------------------------
@@ -55,21 +83,50 @@
    3. Use the same animation-range as the cards.
    4. Add animation-fill-mode: both.
 */
-
-
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.feature-section--left {
+  animation: slide-from-left;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+  animation-fill-mode: both;
+}
 /* TODO 4: Feature Section — Right Slide In
    ---------------------------------------------------------------
    Same approach as TODO 3, but for .feature-section--right which
    starts at translateX(3rem) and slides in from the right.
 */
-
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(3);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.feature-section--right {
+  animation: slide-from-right;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+  animation-fill-mode: both;
+}
 
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-    /* TODO 5: Reduced Motion Support
+  /* TODO 5: Reduced Motion Support
        -----------------------------------------------------------
        Users who prefer reduced motion should not see any of the
        animations above. However, simply removing the animations
@@ -94,4 +151,24 @@
        prefers-reduced-motion before running WAAPI. You only need
        to handle the CSS-animated elements here.
     */
+  .progress-bar {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .feature-section--left {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .feature-section--right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
