@@ -1,0 +1,188 @@
+/*============================================================================================================================
+FOOTER
+============================================================================================================================*/
+
+:root {
+  --roarange: #f47920;
+  --roarange-light: #f69240;
+  --orange: #d4441c;
+  --black: #333333;
+  --dark: #424242;
+  --links: #b82b00;
+  --white: #ffffff;
+  --light: #f1f1f1;
+  --gray: #e6e7e8;
+  --primary: #f47920;
+  --secondary: #616161;
+  --success: #00703e;
+  --info: #235789;
+  --warning: #d4441c;
+  --danger: #c70000;
+  --box-shadow-1: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.24);
+}
+
+footer {
+  margin: 0;
+}
+
+.footer-trim {
+  background-color: var(--roarange);
+  background-image: linear-gradient(
+    to right,
+    var(--roarange-light),
+    var(--roarange)
+  );
+  height: 5px;
+  width: 100%;
+}
+
+.isufooter {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.75) 27%,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.85) 100%
+    ),
+    url(/media/top-level/footer-bg-3.webp);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  color: var(--white);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.isufooter a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.isufooter a:hover {
+  text-decoration: none;
+  color: var(--roarange-light);
+}
+
+.isufooter .h4 {
+  color: var(--white);
+}
+
+.isufooter .footer-links a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.isufooter ul.social-network {
+  list-style: none;
+  padding: 0;
+  line-height: 1.5rem;
+}
+
+.isufooter ul.social-network li {
+  display: inline;
+  margin: 0 8px;
+  font-size: 2rem;
+}
+
+.isufooter ul.social-network li:last-child {
+  margin-right: 0;
+}
+
+.social-network img.icoYouvisit {
+  height: 28px;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/*
+.social-network a.icoFacebook {
+	color: #5D8CAE!important;
+}
+
+.social-network a.icoTwitter {
+	color: #59ABE3!important;
+}
+
+.social-network a.icoYoutube {
+	color: #CF3A24!important;
+}
+
+.social-network a.icoInstagram {
+	color: #BFBFBF!important;
+}
+
+.social-network a.icoSnapchat {
+	color: #F7CA18!important;
+}
+
+
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoYoutube:hover i,
+.social-network a.icoInstagram:hover i,
+.social-network a.icoSnapchat:hover i {
+	color: #888;
+}
+
+a.socialIcon:hover,
+.socialHoverClass {
+	color: #44BCDD;
+}
+*/
+
+h2.footer-list-title,
+h3.footer-list-title,
+h4.footer-list-title,
+h5.footer-list-title,
+h6.footer-list-title {
+  color: var(--roarange-light) !important;
+  font-size: 1.25rem !important;
+}
+
+.isufooter ul.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.isufooter ul.footer-links li {
+  line-height: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.sub-footer {
+  padding: 1.5rem 0 0 0;
+}
+
+.sub-footer hr {
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  border-top: 1px solid #ccc;
+}
+
+.legal-notice ul {
+  list-style: none;
+}
+
+.legal-notice ul li {
+  display: inline;
+  margin-right: 8px;
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+h6.footer-list-title {
+  margin: 0 0 0.5rem 0;
+}
+
+ul.footer-links {
+  margin: 0 0 1rem 0;
+}
+
+div.sub-footer p {
+  font-size: 1rem;
+}
+
+div.sub-footer p.h4 {
+  font-size: clamp(1.4rem, 1.5vw, 1.8rem);
+}

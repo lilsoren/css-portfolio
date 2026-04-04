@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Refactoring Practice</title>
     <!-- Old CSS (reference only - do not modify) -->
     <!-- <link rel="stylesheet" href="styles-old.css"> -->
-    
+
     <!-- New CSS (your refactored version) -->
     <link rel="stylesheet" href="styles-old.css">
 </head>
+
 <body>
     <header class="site-header">
         <nav class="main-nav" id="navigation">
             <a href="#" class="logo">RefactorCSS</a>
             <ul class="nav-list">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#features">Features</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link active">Contact</a></li>
             </ul>
         </nav>
@@ -35,13 +37,14 @@
         <section class="features">
             <div class="container">
                 <h2 class="section-title">Key Features</h2>
-                
+
                 <div class="feature-grid">
                     <article class="card featured">
                         <img src="https://placehold.co/400x250/667eea/ffffff?text=Feature+1" alt="Feature 1">
                         <div class="card-content">
-                            <h3 class="card-title">Modern Selectors</h3>
-                            <p class="card-text">Use :is(), :where(), :has(), and :not() to simplify your CSS and reduce repetition.</p>
+                            <h3>Modern Selectors</h3>
+                            <p class="card-text">Use :is(), :where(), :has(), and :not() to simplify your CSS and reduce
+                                repetition.</p>
                             <a href="#" class="card-link">Learn More</a>
                         </div>
                     </article>
@@ -49,8 +52,9 @@
                     <article class="card featured">
                         <img src="https://placehold.co/400x250/4b76a2/ffffff?text=Feature+2" alt="Feature 2">
                         <div class="card-content">
-                            <h3 class="card-title">CSS Nesting</h3>
-                            <p class="card-text">Organize your styles hierarchically for better readability and maintenance.</p>
+                            <h3>CSS Nesting</h3>
+                            <p class="card-text">Organize your styles hierarchically for better readability and
+                                maintenance.</p>
                             <a href="#" class="card-link">Learn More</a>
                         </div>
                     </article>
@@ -58,8 +62,9 @@
                     <article class="card featured">
                         <img src="https://placehold.co/400x250/764ba2/ffffff?text=Feature+3" alt="Feature 3">
                         <div class="card-content">
-                            <h3 class="card-title">Specificity Control</h3>
-                            <p class="card-text">Manage specificity effectively using :where() for base styles and :is() for component styles.</p>
+                            <h3>Specificity Control</h3>
+                            <p class="card-text">Manage specificity effectively using :where() for base styles and :is()
+                                for component styles.</p>
                             <a href="#" class="card-link">Learn More</a>
                         </div>
                     </article>
@@ -70,22 +75,25 @@
         <section class="testimonials">
             <div class="container">
                 <h2 class="section-title">What Developers Say</h2>
-                
+
                 <div class="testimonial-grid">
                     <blockquote class="testimonial">
-                        <p class="testimonial-text">"Modern selectors have transformed how I write CSS. My code is cleaner and more maintainable than ever."</p>
+                        <p class="testimonial-text">"Modern selectors have transformed how I write CSS. My code is
+                            cleaner and more maintainable than ever."</p>
                         <cite class="testimonial-author">Sarah Chen</cite>
                         <span class="testimonial-role">Frontend Developer</span>
                     </blockquote>
 
                     <blockquote class="testimonial">
-                        <p class="testimonial-text">"The :has() selector eliminated so much JavaScript from my projects. Pure CSS solutions are faster and simpler."</p>
+                        <p class="testimonial-text">"The :has() selector eliminated so much JavaScript from my projects.
+                            Pure CSS solutions are faster and simpler."</p>
                         <cite class="testimonial-author">Marcus Rodriguez</cite>
                         <span class="testimonial-role">Web Developer</span>
                     </blockquote>
 
                     <blockquote class="testimonial">
-                        <p class="testimonial-text">"CSS nesting makes my stylesheets so much easier to navigate. I can find and update styles in seconds."</p>
+                        <p class="testimonial-text">"CSS nesting makes my stylesheets so much easier to navigate. I can
+                            find and update styles in seconds."</p>
                         <cite class="testimonial-author">Jamie Lee</cite>
                         <span class="testimonial-role">UI Engineer</span>
                     </blockquote>
@@ -161,4 +169,5 @@
         </div>
     </footer>
 </body>
+
 </html>

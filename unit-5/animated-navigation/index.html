@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="css/components/buttons.css">
     <link rel="stylesheet" href="css/components/card.css">
 </head>
+
 <body>
 
     <!-- ============================================================
@@ -26,18 +28,14 @@
             <a href="#" class="nav-logo">Portfolio</a>
 
             <ul class="nav-links">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Work</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
 
-            <button
-                class="nav-toggle"
-                aria-expanded="false"
-                aria-controls="slide-menu"
-                aria-label="Open navigation menu"
-            >
+            <button class="nav-toggle" aria-expanded="false" aria-controls="slide-menu"
+                aria-label="Open navigation menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -56,10 +54,7 @@
     <div class="slide-overlay" aria-hidden="true"></div>
 
     <aside class="slide-menu" id="slide-menu" aria-label="Mobile navigation">
-        <button
-            class="slide-menu-close"
-            aria-label="Close navigation menu"
-        >
+        <button class="slide-menu-close" aria-label="Close navigation menu">
             &times;
         </button>
         <nav>
@@ -97,8 +92,11 @@
                 <button class="btn btn-primary">Primary</button>
                 <button class="btn btn-ghost">Ghost</button>
                 <button class="btn btn-icon" aria-label="Favorite">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
                     </svg>
                 </button>
                 <button class="btn btn-loading" aria-label="Loading">
@@ -118,7 +116,7 @@
                     </div>
                     <div class="card-body">
                         <span class="card-tag">CSS</span>
-                        <h3 class="card-title">Container Queries</h3>
+                        <h3>Container Queries</h3>
                         <p class="card-description">
                             Components that respond to the size of their own container
                             rather than the viewport, enabling truly modular design.
@@ -133,7 +131,7 @@
                     </div>
                     <div class="card-body">
                         <span class="card-tag">Layout</span>
-                        <h3 class="card-title">Subgrid Alignment</h3>
+                        <h3>Subgrid Alignment</h3>
                         <p class="card-description">
                             Nested elements that participate directly in a parent grid's
                             track structure, solving cross-card alignment at last.
@@ -148,7 +146,7 @@
                     </div>
                     <div class="card-body">
                         <span class="card-tag">Color</span>
-                        <h3 class="card-title">oklch Color Space</h3>
+                        <h3>oklch Color Space</h3>
                         <p class="card-description">
                             Perceptually uniform color that makes programmatic palette
                             generation predictable and visually consistent.
@@ -163,7 +161,7 @@
                     </div>
                     <div class="card-body">
                         <span class="card-tag">Animation</span>
-                        <h3 class="card-title">Scroll-Driven Motion</h3>
+                        <h3>Scroll-Driven Motion</h3>
                         <p class="card-description">
                             Tie animation progress to scroll position using
                             <code>animation-timeline</code> with no JavaScript required.
@@ -183,4 +181,5 @@
 
     <script type="module" src="js/nav.js"></script>
 </body>
+
 </html>

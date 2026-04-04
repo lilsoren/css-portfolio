@@ -1,0 +1,299 @@
+
+body * {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 500px) {
+  body * {
+    scroll-margin-top: 10px;
+  }
+}
+
+.top-nav {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #fff;
+  z-index: 999;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.24);
+}
+
+.top-nav .container {
+  position: relative;
+}
+
+.top-nav .dropdown-toggle::after {
+  display: none;
+}
+
+.top-nav .navbar-toggler {
+  color: #333;
+  border-color: #f1f1f1;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 2rem;
+}
+
+.top-nav a.navbar-brand {
+  color: #333;
+  font-size: 1.3rem;
+  padding-top: 0.3rem;
+  outline-style: none;
+  text-decoration: none;
+}
+
+.top-nav .navbar-nav a.nav-link {
+  color: #333;
+  font-size: 1.25rem;
+  outline-style: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* this is the + / - that expands dropdown*/
+.expand-icon {
+  font-size: 1.1rem;
+  display: inline-block;
+  position: relative;
+  margin-left: 0.75rem;
+  transition: 0.2s ease-in-out;
+  border: 1px solid #333;
+  padding: 0 0.35rem;
+}
+
+.closed {
+}
+
+.open {
+}
+
+.top-nav .dropdown-menu {
+  overflow: hidden;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+  max-height: 1080px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  transition: all 0.2s ease-in-out;
+}
+/* these classes are used to hide the dropdown list
+     must use these classes instead of inline style so
+     we can reset the classes on page resize
+  */
+.show-dropdown {
+  display: flex;
+}
+
+.hiding {
+  max-height: 0px;
+  overflow: hidden;
+}
+
+.hide-dropdown {
+  display: none;
+}
+
+.top-nav a.dropdown-item {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  display: flex;
+  border-bottom: 3px solid transparent;
+  outline-style: none;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  /* this prevents firefox from expanding 
+  the drop downs to be huge on mobile */
+  .top-nav .nav-link {
+    height: auto !important;
+  }
+
+  .sticky-top {
+    position: relative;
+  }
+}
+
+@media (min-width: 992px) {
+  .top-nav a.navbar-brand {
+    font-size: 1.3rem;
+    padding-top: 0;
+    margin-top: -0.2rem;
+    border-bottom: 3px solid transparent;
+  }
+
+  .top-nav a.navbar-brand:hover,
+  .top-nav a.navbar-brand:focus {
+    border-bottom: 3px solid var(--roarange);
+  }
+
+  .top-nav .navbar {
+    padding: 1.2rem 0 0.5rem 0;
+  }
+
+  .top-nav .navbar-nav {
+    align-items: center;
+  }
+
+  .top-nav .navbar-nav a.nav-link {
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+  }
+
+  .top-nav .dropdown-item {
+    border-bottom: 3px solid transparent;
+  }
+
+  .top-nav .navbar-nav a.nav-link:hover,
+  .top-nav .navbar-nav a.nav-link:focus,
+  .top-nav .navbar-nav a.nav-link.active {
+    color: #000;
+    border-bottom: 3px solid var(--roarange);
+  }
+
+  a.dropdown-item.active {
+    background-color: var(--light);
+    color: var(--black);
+    border-color: transparent;
+    border-bottom: 3px solid var(--roarange);
+  }
+
+  .top-nav .dropdown-menu {
+    overflow: hidden;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #e6e7e8;
+    border-right: 1px solid #e6e7e8;
+    border-left: 1px solid #e6e7e8;
+  }
+
+  .top-nav .dropdown .nav-link .expand-icon,
+  .top-nav .dropdown .nav-link,
+  .top-nav .dropdown-menu,
+  .top-nav .nav-item,
+  .top-nav .navbar-brand {
+    -moz-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+    -ms-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+  }
+
+  .top-nav a.dropdown-item:hover,
+  a.dropdown-item:focus {
+    color: #000;
+    background-color: #f1f1f1;
+    border-bottom-color: var(--roarange);
+    text-decoration: none;
+  }
+
+  .expand-icon {
+    font-size: 0.8rem;
+    display: inline-block;
+    position: relative;
+    margin-left: 0.25rem;
+    transition: 0.2s ease-in-out;
+    border: none;
+  }
+
+  /* This allows for hover and focus to show dropdown on desktop */
+  /*
+    ul.navbar-nav li.dropdown:hover>div.dropdown-menu {
+        display: block;
+    }
+    ul.navbar-nav li.dropdown:focus>div.dropdown-menu {
+        display: block;
+    }
+    */
+
+  /* hide +/- on desktop */
+  /*
+        .expand-icon {
+            display: none;
+        }
+    */
+
+  .top-nav.scrolld {
+    background-color: #424242;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+  }
+
+  .top-nav.scrolld a.navbar-brand {
+    color: #fff;
+  }
+
+  .top-nav.scrolld .navbar-toggler {
+    color: #fff;
+    border-color: #424242;
+  }
+
+  .top-nav.scrolld .navbar-nav a.nav-link {
+    color: #fff;
+  }
+
+  .top-nav.scrolld .dropdown-menu {
+    background-color: #424242;
+    border: 1px solid #666;
+  }
+
+  .top-nav.scrolld .dropdown-item {
+    color: #fff;
+    border-bottom: 3px solid #666;
+  }
+
+  .top-nav.scrolld .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #333;
+    text-decoration: none;
+    background-color: #e0e0e0;
+  }
+
+  .top-nav.scrolld .dropdown-item.active {
+    color: #fff !important;
+    background-color: #424242 !important;
+    border-bottom: 3px solid var(--roarange);
+  }
+  .top-nav.scrolld .lock {
+    border-left: 1px solid #e0e0e0 !important;
+    border-right: 1px solid #e0e0e0 !important;
+    border-top: none !important;
+    border-bottom: none;
+  }
+
+  .top-nav.scrolld .dropdown-item:hover,
+  .top-nav.scrolld .dropdown-item:focus {
+    border-bottom: 3px solid var(--roarange) !important;
+  }
+
+  .top-nav.scrolld .lock,
+  .top-nav.scrolld .bg-white a.nav-link,
+  .top-nav.scrolld .lock .dropdown-item {
+    color: #333;
+    background-color: #f8f8f8;
+  }
+
+  .top-nav.scrolld .lock .dropdown-item:focus,
+  .top-nav.scrolld .bg-white .nav-link:hover,
+  .top-nav.scrolld .lock .dropdown-item:hover {
+    color: #333;
+    border-bottom: 3px solid var(--roarange) !important;
+    background-color: #e0e0e0;
+  }
+
+  .top-nav.scrolld .lock .dropdown-item {
+    border-bottom-color: #e0e0e0;
+  }
+
+  .top-nav.scrolld .border {
+    border: 1px solid #e0e0e0 !important;
+  }
+}

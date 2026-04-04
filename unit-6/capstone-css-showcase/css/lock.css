@@ -1,0 +1,138 @@
+.container-first {
+  padding-top: 1em;
+}
+
+/*============================================================================================================================
+TYPOGRAPHY
+============================================================================================================================*/
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: museo-slab, sans-serif !important;
+    color: #333 !important;
+    font-style: normal !important;
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    font-family: museo-slab, sans-serif !important;
+    color: #333 !important;
+    font-style: normal !important;
+}
+
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+.h1 strong, .h2 strong, .h3 strong, .h4 strong, .h5 strong, .h6 strong {
+	font-weight: 500 !important;
+}
+
+h1,
+.h1 {
+    font-size: clamp(2rem,2.5vw,3rem)!important;
+}
+
+h2,
+.h2 {
+    font-size: clamp(1.8rem,2.16vw,2.6rem)!important;
+}
+
+h3,
+.h3 {
+    font-size: clamp(1.6rem,1.83vw,2.2rem)!important;
+}
+
+h4,
+.h4 {
+    font-size: clamp(1.4rem,1.5vw,1.8rem)!important;
+}
+
+h5,
+.h5 {
+    font-size: clamp(1.3rem,1.25vw,1.5rem)!important;
+}
+
+h6,
+.h6 {
+    font-size: 1.2rem!important;
+}
+
+
+
+.display-1 {
+  font-size: calc(16px + 4.4vw)!important;
+}
+
+.display-2 {
+  font-size: calc(16px + 4vw)!important;
+}
+
+.display-3 {
+  font-size: calc(16px + 3.1vw)!important;
+}
+
+.display-4 {
+  font-size: calc(16px + 2.2vw)!important;
+}
+
+@media (min-width: 1800px) {
+      .display-1 {
+        font-size: 6rem!important;
+    }
+
+    .display-2 {
+        font-size: 5.5rem!important;
+    }
+
+    .display-3 {
+        font-size: 4.5rem!important;
+    }
+
+    .display-4 {
+        font-size: 3.5rem!important;
+    }
+}
+
+
+.veneer-xl {
+  font-size: calc(16px + 6.2vw)!important;
+}
+.veneer-1 {
+  font-size: calc(16px + 4.4vw)!important;
+}
+.veneer-2 {
+  font-size: calc(16px + 4vw)!important;
+}
+.veneer-3 {
+  font-size: calc(16px + 3.1vw)!important;
+}
+.veneer-4 {
+  font-size: calc(16px + 2.2vw)!important;
+}
+
+
+@media (min-width: 1800px) {
+    .veneer-xl {
+    font-size: 8rem!important;
+    }
+    .veneer-1 {
+    font-size: 6rem!important;
+    }
+    .veneer-2 {
+    font-size: 5.5rem!important;
+    }
+    .veneer-3 {
+    font-size: 4.5rem!important;
+    }
+    .veneer-4 {
+    font-size: 3.5rem!important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
