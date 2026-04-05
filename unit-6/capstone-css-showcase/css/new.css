@@ -469,9 +469,11 @@
   .main-grid .container {
     .upcoming-events .card-grid {
       grid-template-columns: 1fr 1fr;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
 
       .card {
-        height: 700px;
+        scroll-snap-align: start;
       }
     }
     .visitor-info-container .visitor-info {
@@ -518,5 +520,12 @@
   }
   .footer .footer-content {
     justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
   }
 }
